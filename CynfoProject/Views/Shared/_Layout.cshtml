@@ -29,6 +29,7 @@
                     @if (@User.Identity.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Your are in " + @User.Identity.Name + "'s Domain", "Index", "Home")</li>
+                        <li>@Html.ActionLink("My Places", "Index", "Places")</li>
                         <li>@Html.ActionLink("Logout", "Logout", "Auth")</li>
                     }
                     else

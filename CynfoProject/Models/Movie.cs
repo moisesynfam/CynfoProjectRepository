@@ -18,30 +18,7 @@ namespace CynfoProject.Models
         public decimal Price { get; set; }
     }
 
-    public class place
-    {
-        public int ID { get; set; }
-        public string idPlace { get; set; }
 
-   
-    public string placeName { get; set; }
-        
-    public string placeDescription { get; set; }
-
-    
-    public byte[] placeLogo { get; set; }
-
-    public int placeMajor { get; set; }
-
- 
-    public string placeAddress { get; set; }
-
-
-    public string placecontact { get; set; }
-
-    public virtual ICollection<beacon> beacons { get; set; }
-
-}
 
 
     public partial class beacon
@@ -92,6 +69,6 @@ namespace CynfoProject.Models
         public DbSet<Movie> Movies { get; set; }
         public DbSet<ad> ads { get; set; }
         public DbSet<beacon> beacons { get; set; }
-        public DbSet<place> places { get; set; }
+        public DbSet<Place> places { get; set; }
     }
 }

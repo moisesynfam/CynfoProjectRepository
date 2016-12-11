@@ -1,0 +1,69 @@
+﻿@model IEnumerable<CynfoProject.Models.Place>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PlaceName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlaceDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlaceLogoURL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlaceMajor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlaceAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Placecontact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlaceName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlaceDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlaceLogoURL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlaceMajor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlaceAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Placecontact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PlaceID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PlaceID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PlaceID })
+        </td>
+    </tr>
+}
+
+</table>

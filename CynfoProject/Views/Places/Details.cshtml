@@ -1,0 +1,74 @@
+﻿@model CynfoProject.Models.Place
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Place</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PlaceName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlaceName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlaceDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlaceDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlaceLogoURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlaceLogoURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlaceMajor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlaceMajor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlaceAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlaceAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Placecontact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Placecontact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PlaceID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

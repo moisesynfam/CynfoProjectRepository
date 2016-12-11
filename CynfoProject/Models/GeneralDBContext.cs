@@ -9,5 +9,6 @@ namespace CynfoProject.Models
     public class GeneralDBContext : DbContext
     {
         public DbSet<User> UserAccounts { get; set; }
+        public DbSet<Place> Places { get; set; }
     }
 }

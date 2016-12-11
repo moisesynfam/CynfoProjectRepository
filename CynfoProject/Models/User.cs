@@ -25,6 +25,7 @@ namespace CynfoProject.Models
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-       
+        public virtual ICollection<Place> Places { get; set; }
+
     }
 }

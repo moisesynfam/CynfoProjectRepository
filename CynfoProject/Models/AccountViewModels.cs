@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CynfoProject.Models
 {
@@ -43,5 +44,33 @@ namespace CynfoProject.Models
 
     }
 
+    public class Place
+    {
+
+        [Key]
+        public string PlaceID { get; set; }
+
+        [Required(ErrorMessage ="A place name is required.")]
+        public string PlaceName { get; set; }
+
+        public string PlaceDescription { get; set; }
+        
+        public string PlaceLogoURL { get; set; }
+
+        [Required(ErrorMessage = "A place identifier is required.")]
+        [Display(Name = "Place Identifier")]
+        public int PlaceMajor { get; set; }
+
+        [Required(ErrorMessage = "A place must have an address")]
+        public string PlaceAddress { get; set; }
+
+        [Required(ErrorMessage = "A telephone number is required")]
+        [DataType(DataType.PhoneNumber)]
+        public string Placecontact { get; set; }
+       
+        public int UserID { get; set; }
+
 
     }
+
+}

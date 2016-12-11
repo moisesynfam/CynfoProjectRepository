@@ -40,13 +40,11 @@ namespace CynfoProject.Controllers
                 {
                     var getEmail = db.UserAccounts.Where(u => u.Username == model.Username).Select(u => u.Email);
                     var email = getEmail.ToList()[0]; 
-                    var getEntity = db.UserAccounts.Where(u => u.Username == model.Username).Select(u => u.Entity);
-                    var Entity = getEntity.ToList()[0];
-
+                    
 
                     var identity = new ClaimsIdentity(new[]{
                     new Claim(ClaimTypes.Email,email),
-                    new Claim(ClaimTypes.Name, Entity)
+                    new Claim(ClaimTypes.Name, model.Username)
                      }, "ApplicationCookie");
                     var ctx = Request.GetOwinContext();
                     var authManager = ctx.Authentication;
@@ -89,9 +87,20 @@ namespace CynfoProject.Controllers
                     db.UserAccounts.Add(user);
                     db.SaveChanges();
 
+                    var identity = new ClaimsIdentity(new[]{
+                    new Claim(ClaimTypes.Email,model.Email),
+                    new Claim(ClaimTypes.Name, model.Username)
+                     }, "ApplicationCookie");
+                    var ctx = Request.GetOwinContext();
+                    var authManager = ctx.Authentication;
+                    authManager.SignIn(identity);
+                    return RedirectToAction("Index", "Home");
                 }
 
+
+
             }
+
             else
             {
                 ModelState.AddModelError("","One or more fields are not correct. Please Verify");
