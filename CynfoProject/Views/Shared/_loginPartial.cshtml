@@ -1,0 +1,9 @@
+﻿
+@if (@User.Identity.IsAuthenticated)
+{
+    @Html.ActionLink("Hello " + @User.Identity.Name + "!", "Index", "Home", new { area = "" }, new { @class = "navbar-right" })
+}
+else
+{
+    @Html.ActionLink("Login", "Index", "Home", new { area = "" }, new { @class = "navbar-right" })
+}
